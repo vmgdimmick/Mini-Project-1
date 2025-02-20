@@ -12,18 +12,18 @@ def predict_job_satisfaction(new_employee_data):
     5) Calls model.predict(...) and returns the predicted JobSatisfaction.
     """
 
-    # Step A: Load the final columns from training
+    # Load the final columns from training
     with open("columns.txt", "r") as f:
         final_columns = f.read().splitlines()  # list of column names
 
-    # Step B: Load the scaler
+    # Load the scaler
     with open("scaler.pkl", "rb") as f:
         scaler = pickle.load(f)
 
-    # Step C: Load the trained Keras model
+    #Load the trained Keras model
     model = load_model("neuralnet1.keras")
 
-    # Step D: Convert the new data (dict) to a DataFrame
+    # Convert the new data (dict) to a DataFrame
     X_new = pd.DataFrame([new_employee_data])
     # E.g. X_new columns might be: [BusinessTravel, DistanceFromHome, YearsAtCompany, Age]
 
@@ -31,21 +31,21 @@ def predict_job_satisfaction(new_employee_data):
     categorical_cols = ["BusinessTravel"]  # same as training
     numeric_cols = ["DistanceFromHome", "YearsAtCompany", "Age"]  # same as training
 
-    # Step E: One-hot-encode the new data's categorical columns
+    # One-hot-encode the new data's categorical columns
     X_new = pd.get_dummies(X_new, columns=categorical_cols, drop_first=True)
 
-    # Step F: Add any missing columns that were in final_columns but not in X_new
+    #  Add any missing columns that were in final_columns but not in X_new
     for col in final_columns:
         if col not in X_new.columns:
             X_new[col] = 0
 
-    # Step G: Ensure the exact same column order
+    # Ensure the exact same column order
     X_new = X_new[final_columns]
 
-    # Step H: Scale numeric columns with the loaded scaler
+    # Scale numeric columns with the loaded scaler
     X_new[numeric_cols] = scaler.transform(X_new[numeric_cols])
 
-    # Step I: Predict with the model
+    # Predict with the model
     prediction = model.predict(X_new)
 
     # Return the single numeric value (assuming one row)
@@ -54,7 +54,6 @@ def predict_job_satisfaction(new_employee_data):
 
 if __name__ == "__main__":
     # Example usage:
-    # python predict.py
     # Let's feed in a new employee's data
     new_employee_dict = {
         "BusinessTravel": "Travel_Rarely",
