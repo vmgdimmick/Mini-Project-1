@@ -1,0 +1,5 @@
+DistanceFromHome
+YearsAtCompany
+Age
+BusinessTravel_Travel_Frequently
+BusinessTravel_Travel_Rarely
