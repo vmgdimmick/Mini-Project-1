@@ -4,10 +4,10 @@
 # Employee Satisfaction
 
 ## Introduction
-Provide a brief overview of the problem your project aims to solve. Include background information, significance, and references to existing work on the topic.
+We wanted to look into employee productivity and the various factors encompassed. We are creating a decision tree on employee attrition, a neural network on predicted job satisfaction, and a clustering model on work projects completed. 
 
 ## Data Source
-Describe where you obtained the data used in this project. Include links, citations, or any relevant details about how the data was collected or processed.
+Two datasets were found from Kaggle and cleaned and merged into one. To merge the data, a mutual column was created in both data sets and they were merged within that column. Evaluation of the models will be done with a confusion matrix.
 
 ## Installation and Setup
 Instructions for setting up the project environment and running the code:
@@ -40,10 +40,10 @@ Summarize the results with supporting visuals, tables, or explanations.
 
 ## Contributions
 List the team members and their contributions:
-- **[Name]** - [Role and contributions]
-- **[Name]** - [Role and contributions]
-- **[Name]** - [Role and contributions]
-- **[Name]** - [Role and contributions]
+- **Cailey Crandall** - [Role and contributions]
+- **Vance Dimmick** - [Role and contributions]
+- **Sheridan Traish** - [Role and contributions]
+- **Renee Vannice** - [Role and contributions]
 
 ## Future Work
 Mention potential improvements or next steps for the project.
