@@ -17,9 +17,9 @@ def train_model(data_file):
     5) Trains a neural network
     6) Saves model, scaler, and final column list
     """
-    # ---------------------------------------
+    
     # Step A: Load the dataset
-    # ---------------------------------------
+   
     df = pd.read_csv(data_file)
     # E.g. columns: [BusinessTravel, DistanceFromHome, YearsAtCompany, Age, JobSatisfaction]
     # Adjust names as needed
@@ -37,31 +37,31 @@ def train_model(data_file):
     numeric_cols = ["DistanceFromHome", "YearsAtCompany", "Age"]
     categorical_cols = ["BusinessTravel"]
 
-    # ---------------------------------------
+    
     # Step B: One-hot-encode the categorical columns
-    # ---------------------------------------
+    
     X = pd.get_dummies(X, columns=categorical_cols, drop_first=True)
 
     # Save the final columns after encoding (for alignment in inference)
     final_columns = X.columns.tolist()
 
-    # ---------------------------------------
+    
     # Step C: Train/test split
-    # ---------------------------------------
+    
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
 
-    # ---------------------------------------
+    
     # Step D: Scale numeric columns
-    # ---------------------------------------
+    
     scaler = StandardScaler()
     X_train[numeric_cols] = scaler.fit_transform(X_train[numeric_cols])
     X_test[numeric_cols] = scaler.transform(X_test[numeric_cols])
 
-    # ---------------------------------------
+    
     # Step E: Build and train the model
-    # ---------------------------------------
+    
     model = Sequential()
     model.add(Dense(8, activation='relu', input_shape=(X_train.shape[1],)))
     model.add(Dense(1, activation='linear'))  # single numeric output
@@ -81,9 +81,8 @@ def train_model(data_file):
     print(f"Final Training MSE: {train_loss:.4f}")
     print(f"Final Testing MSE:  {test_loss:.4f}")
 
-    # ---------------------------------------
+    
     # Step F: Save model, scaler, and column info
-    # ---------------------------------------
     model.save("neuralnet1.keras")
     print("Model saved to neuralnet1.keras")
 
