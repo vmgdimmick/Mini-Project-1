@@ -13,10 +13,52 @@ This project explores the factors influencing employee productivity and satisfac
 By combining these approaches, we aim to gain insight into what drives employee engagement and where organizations can make improvements.
 
 ## Data Source
-Our data is derived from two separate Kaggle datasets, cleaned and merged into a single comprehensive dataset for the clustering model.
+Our data is derived from two separate Kaggle datasets, cleaned and merged into a single comprehensive dataset for the clustering model. The rows for both datasets are employee number. The columns of both data sets are listed below.
 
-
-
+### Attrition Rate of a Company:
+- EmployeeID
+- Age
+- Attrition
+- BusinessTravel
+- Department
+- DistanceFromHome
+- Education
+- EducationField
+- EmployeeCount
+- Gender
+- JobLevel
+- JobRole
+- MartialStatus
+- MonthlyIncome
+- NumCompaniesWorked
+- Over18
+- PercentSalaryHike
+- StandardHours
+- StockOptionLevel
+- TotalWorkingYears
+- TrainingTimesLastYear
+- YearsAtCompany
+- YearsSinceLastPromotion
+- YearsWithCurrManager
+- EnvironmentSatisfaction
+- JobSatisfaction
+- WorkLifeBalance
+- JobInvolvement
+- PerformanceRating
+   
+### Employee Productivity and Satisfaction
+- Name
+- Age
+- Gender
+- Projects Completed
+- Productivity (%)
+- Satisfaction Rate (%)
+- Feedback Score
+- Department
+- Position
+- Joining Date
+- Salary
+  
 
 ## Installation and Setup
 Instructions for setting up the project environment and running the neural network:
