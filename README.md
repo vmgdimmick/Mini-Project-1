@@ -13,7 +13,7 @@ Two datasets were found from Kaggle and cleaned and merged into one. To merge th
 Instructions for setting up the project environment and running the code:
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone <(https://github.com/CaileyCrandall/Mini-Project-1)>
    ```
 2. Navigate to the project directory:
    ```bash
@@ -21,11 +21,13 @@ Instructions for setting up the project environment and running the code:
    ```
 3. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install pandas
+   pip install scikit-learn
+   pip install tensorflow
    ```
 4. Run the script:
    ```bash
-   python main.py
+   python train.py # (or whatever script you are running)
    ```
    
 
