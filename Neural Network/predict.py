@@ -54,13 +54,22 @@ def predict_job_satisfaction(new_employee_data):
 
 if __name__ == "__main__":
     # Example usage:
-    # Let's feed in a new employee's data
-    new_employee_dict = {
-        "BusinessTravel": "Travel_Rarely",
-        "DistanceFromHome": 10,
-        "YearsAtCompany": 2,
-        "Age": 35
-    }
-
-    predicted_satisfaction = predict_job_satisfaction(new_employee_dict)
-    print(f"Predicted Job Satisfaction: {predicted_satisfaction}")
+    # python predict.py
+# creating test cases
+    test_cases = [
+        {"BusinessTravel": "Travel_Frequently", "DistanceFromHome": 1, "YearsAtCompany": 1, "Age": 22},
+        {"BusinessTravel": "Travel_Rarely", "DistanceFromHome": 50, "YearsAtCompany": 30, "Age": 60},
+        {"BusinessTravel": "Travel_Frequently", "DistanceFromHome": 20, "YearsAtCompany": 15, "Age": 35},
+        {"BusinessTravel": "Travel_Rarely", "DistanceFromHome": 5, "YearsAtCompany": 5, "Age": 25},
+        {"BusinessTravel": "Travel_Frequently", "DistanceFromHome": 100, "YearsAtCompany": 40, "Age": 65},
+        {"BusinessTravel": "Travel_Rarely", "DistanceFromHome": 30, "YearsAtCompany": 10, "Age": 45},
+        {"BusinessTravel": "Travel_Frequently", "DistanceFromHome": 75, "YearsAtCompany": 25, "Age": 55},
+        {"BusinessTravel": "Travel_Rarely", "DistanceFromHome": 10, "YearsAtCompany": 2, "Age": 23},
+        {"BusinessTravel": "Travel_Frequently", "DistanceFromHome": 60, "YearsAtCompany": 35, "Age": 58},
+        {"BusinessTravel": "Travel_Rarely", "DistanceFromHome": 3, "YearsAtCompany": 8, "Age": 29}
+    ]
+# Find prediction for every test case
+    for i, new_employee_dict in enumerate(test_cases, start=1):
+        predicted_satisfaction = predict_job_satisfaction(new_employee_dict)
+        print(f"Test Case {i}: {new_employee_dict}")
+        print(f"Predicted Job Satisfaction: {predicted_satisfaction}\n")
