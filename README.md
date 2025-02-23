@@ -79,7 +79,8 @@ Our data is derived from two separate Kaggle datasets, cleaned and merged into a
 - Joining Date
 - Salary
   
-
+Side Note:
+In the Neural Network code folder, you will find a file named extrater.csv (yes, I know the spelling is incorrect). This file is used by a program I created to extract specific columns of interest, making the data easier to work with. There is also a file called filtered_data.csv, which is the output of the data extraction program. I included this file because it may be helpful for anyone looking to narrow down the data to focus on specific variables.
 ## Installation and Setup
 Instructions for setting up the project environment and running the neural network:
 1. Clone this repository:
