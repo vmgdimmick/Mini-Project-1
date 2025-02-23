@@ -67,7 +67,7 @@ def train_model(data_file):
     model.add(Dense(1, activation='linear'))  # single numeric output
     model.compile(optimizer='adam', loss='mse')
 
-    model.fit(
+    history = model.fit(
         X_train, y_train,
         validation_data=(X_test, y_test),
         epochs=10,
@@ -80,9 +80,8 @@ def train_model(data_file):
     test_loss = model.evaluate(X_test, y_test, verbose=0)
     print(f"Final Training MSE: {train_loss:.4f}")
     print(f"Final Testing MSE:  {test_loss:.4f}")
-
     
-    # Step F: Save model, scaler, and column info
+    # Save model, scaler, and column info
     model.save("neuralnet1.keras")
     print("Model saved to neuralnet1.keras")
 
@@ -95,6 +94,17 @@ def train_model(data_file):
     with open("columns.txt", "w") as f:
         f.write("\n".join(final_columns))
     print("Column list saved to columns.txt")
+
+    # Plot loss vs. epoch graph
+    plt.figure(figsize=(8, 5))
+    plt.plot(history.history['loss'], label='Training Loss')
+    plt.plot(history.history['val_loss'], label='Validation Loss')
+    plt.title('Loss vs. Epoch')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss (MSE)')
+    plt.legend()
+    plt.show()
+    
 
 
 if __name__ == "__main__":
