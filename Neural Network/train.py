@@ -1,12 +1,13 @@
 import pandas as pd
 import pickle
-
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-from tensorflow.keras.models import load_model
+from tensorflow.keras.callbacks import EarlyStopping
+import matplotlib.pyplot as plt
+import tensorflow as tf
 
 def train_model(data_file):
     """
