@@ -118,6 +118,7 @@ Instructions for setting up the project environment and running the neural netwo
    pip install pandas
    pip install scikit-learn
    pip install tensorflow
+   pip install matplotlib # You might need to get version 3.9 or lower. 3.10 has problems. (visit https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/issues/2411 for elaboration)
    ```
 4. Run the script:
    ```bash
@@ -137,7 +138,7 @@ Instructions for setting up the project environment and running the neural netwo
    pip install pandas
    pip install scikit-learn
    pip install tensorflow
-   pip install matplotlib # You might need to get version 3.9 or lower. 3.10 has problems. (visit https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/issues/2411 for elaboration)
+   
    ```
 4. Run the script:
    ```bash
