@@ -12,6 +12,26 @@ This project explores the factors influencing employee productivity and satisfac
 
 By combining these approaches, we aim to gain insight into what drives employee engagement and where organizations can make improvements.
 
+### Overview of Neural Network Model ###
+This neural network model predicts employee job satisfaction based on key factors including business travel frequency, distance from home, years at company, and age. The model demonstrates consistent predictions within a concentrated range (2.1-2.9 on a satisfaction scale), reflecting both our methodology and underlying data patterns.
+
+
+Type: Feed-forward neural network with single hidden layer
+Input Features:
+
+BusinessTravel (categorical)
+DistanceFromHome (numerical)
+YearsAtCompany (numerical)
+Age (numerical)
+
+Activation Functions:
+
+Hidden Layer: ReLU
+Output Layer: Linear
+
+Loss Function: Mean Squared Error (MSE)
+Optimizer: Adam
+
 ## Data Source
 Our data is derived from two separate Kaggle datasets, cleaned and merged into a single comprehensive dataset for the clustering model. The rows for both datasets are employee number. The columns of both data sets are listed below.
 
@@ -173,11 +193,149 @@ We used scikit-learn’s StandardScaler for our numeric columns (e.g., DistanceF
 
 Overall, this pipeline—data cleaning, encoding, scaling, model definition, training, and evaluation—is a well-rounded approach to building a predictive neural network for continuous outcomes like *JobSatisfaction*. It balances simplicity and low computational cost (because of the single hidden layer) with enough flexibility to model non-linearities in the data.
    
-## Analysis and Discussion
-Provide an overview of the methods used for analysis. Include key findings, interpretations, and any challenges encountered.
 
-## Results
-Summarize the results with supporting visuals, tables, or explanations.
+
+# Job Satisfaction Prediction Model Results Analysis
+
+## Overview
+This document analyzes predictions from our neural network model that predicts employee job satisfaction based on business travel frequency, distance from home, years at company, and age. The model predicts satisfaction on a scale that appears to range from approximately 2.5 to 7.6.
+
+## Key Findings
+
+### Highest Satisfaction Cases
+1. **Test Case 5** (Satisfaction: 7.56)
+   - Senior employee (Age: 65)
+   - Very long tenure (40 years)
+   - Long distance (100 miles)
+   - Frequent travel
+   
+2. **Test Case 7** (Satisfaction: 5.95)
+   - Mid-senior employee (Age: 55)
+   - Long tenure (25 years)
+   - Significant distance (75 miles)
+   - Frequent travel
+
+### Lowest Satisfaction Cases
+1. **Test Case 3** (Satisfaction: 2.51)
+   - Mid-career employee (Age: 35)
+   - Moderate tenure (15 years)
+   - Moderate distance (20 miles)
+   - Frequent travel
+
+2. **Test Case 4** (Satisfaction: 2.65)
+   - Young employee (Age: 25)
+   - Early career (5 years)
+   - Short distance (5 miles)
+   - Rare travel
+
+## Pattern Analysis
+
+### Age and Tenure Impact
+- **Strong Positive Correlation**: Higher age and longer tenure strongly correlate with higher satisfaction
+- Highest predictions occur with employees over 55 years old
+- Early-career employees (< 30 years old) consistently show lower satisfaction (2.5-2.8 range)
+
+### Distance from Home Effects
+- **Unexpected Pattern**: Longer distances correlate with higher satisfaction when combined with seniority
+- Top three satisfaction scores all involve distances > 50 miles
+- Short distances (< 10 miles) consistently predict lower satisfaction (2.6-2.8 range)
+
+### Business Travel Impact
+- **Mixed Effects**: Travel frequency shows interesting interactions with other variables
+- Frequent travelers show highest variability in satisfaction (2.51-7.56)
+- Rare travelers show more consistent, moderate satisfaction levels (2.65-4.42)
+
+## Notable Relationships
+
+### Age-Distance Interaction
+- Older employees with longer commutes show surprisingly high satisfaction
+- This might suggest successful career advancement offsetting commute burden
+
+### Travel-Tenure Relationship
+- Frequent travel combined with long tenure predicts higher satisfaction
+- May indicate career success and advancement opportunities
+
+## Model Behavior Insights
+1. **Range**: Predictions span from 2.51 to 7.56, showing significant variation
+2. **Clustering**: Several predictions cluster around 2.6-2.8 for younger employees
+3. **Outliers**: Notably high predictions for senior employees with long distances
+
+## Recommendations for Further Investigation
+1. Validate the high satisfaction predictions for long-distance senior employees
+2. Investigate why younger employees consistently show lower satisfaction
+3. Explore additional features that might explain satisfaction variations
+4. Consider potential biases in the training data regarding age and tenure
+
+## Technical Notes
+- The model shows consistent patterns in prediction behavior
+- TensorFlow warnings indicate potential optimization opportunities in the prediction pipeline
+- Results suggest strong feature interactions affecting predictions
+
+## Usage Example
+```python
+test_case = {
+    'BusinessTravel': 'Travel_Frequently',
+    'DistanceFromHome': 20,
+    'YearsAtCompany': 15,
+    'Age': 35
+}
+# Will predict satisfaction in range 2.5-7.6
+```
+
+---
+# Model Accuracy
+
+Here are the results after running the training script of the neural network. The model decided that 39 epochs was sufficient. At the bottom of the text, the MSE for testing and training is listed. We can see that the testing MSE is ~0.4 more than the training MSE. 
+```
+Training Monitor Log:
+Epoch 1: ✓ New best model!
+Epoch 2: ✓ New best model!
+Epoch 3: ✓ New best model!
+Epoch 4: ✓ New best model!
+Epoch 5: ✓ New best model!
+Epoch 6: ✓ New best model!
+Epoch 7: ✓ New best model!
+Epoch 8: ✓ New best model!
+Epoch 9: ✓ New best model!
+Epoch 10: ✓ New best model!
+Epoch 11: ✓ New best model!
+Epoch 12: ✓ New best model!
+Epoch 13: ✓ New best model!
+Epoch 14: ✓ New best model!
+Epoch 15: ✓ New best model!
+Epoch 16: ✓ New best model!
+Epoch 17: ✓ New best model!
+Epoch 18: ✓ New best model!
+Epoch 19: ✓ New best model!
+Epoch 20: ✓ New best model!
+Epoch 21: ✓ New best model!
+Epoch 22: ✓ New best model!
+Epoch 23: ✓ New best model!
+Epoch 24: ⚠️ No improvement: patience 1/3
+Epoch 25: ✓ New best model!
+Epoch 26: ✓ New best model!
+Epoch 27: ⚠️ No improvement: patience 1/3
+Epoch 28: ✓ New best model!
+Epoch 29: ⚠️ No improvement: patience 1/3
+Epoch 30: ✓ New best model!
+Epoch 31: ⚠️ No improvement: patience 1/3
+Epoch 32: ✓ New best model!
+Epoch 33: ✓ New best model!
+Epoch 34: ✓ New best model!
+Epoch 35: ⚠️ No improvement: patience 1/3
+Epoch 36: ✓ New best model!
+Epoch 37: ⚠️ No improvement: patience 1/3
+Epoch 38: ⚠️ No improvement: patience 2/3
+Epoch 39: ⛔ Stopping! No improvement for 3 epochs
+Final Training MSE: 1.2019
+Final Testing MSE:  1.2490
+Model saved to neuralnet1.keras
+Scaler saved to scaler.pkl
+Column list saved to columns.txt
+```
+### Loss vs. Epoch Graph of Neural Network ### 
+![image](https://github.com/user-attachments/assets/32e0a3da-60d4-419f-88f8-adccf73dcf12)
+
 
 ## Contributions
 List the team members and their contributions:
