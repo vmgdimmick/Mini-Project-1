@@ -13,7 +13,7 @@ This project explores the factors influencing employee productivity and satisfac
 By combining these approaches, we aim to gain insight into what drives employee engagement and where organizations can make improvements.
 
 ### Overview of Neural Network Model ###
-This neural network model predicts employee job satisfaction based on key factors including business travel frequency, distance from home, years at company, and age. The model demonstrates consistent predictions within a concentrated range (2.1-2.9 on a satisfaction scale), reflecting both our methodology and underlying data patterns.
+This neural network model predicts employee job satisfaction based on key factors including business travel frequency, distance from home, years at company, and age.
 
 
 Type: Feed-forward neural network with single hidden layer
