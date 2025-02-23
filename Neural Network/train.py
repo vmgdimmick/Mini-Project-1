@@ -60,20 +60,94 @@ def train_model(data_file):
     X_test[numeric_cols] = scaler.transform(X_test[numeric_cols])
 
     
-    # Step E: Build and train the model
-    
+    # Build and train the model
+
+    # A simple feedforward neural network for regression with one hidden layer
     model = Sequential()
     model.add(Dense(8, activation='relu', input_shape=(X_train.shape[1],)))
     model.add(Dense(1, activation='linear'))  # single numeric output
     model.compile(optimizer='adam', loss='mse')
+    
+    # Custom early stopping callback to halt training if validation loss stops improving
+    class EarlyStoppingMonitor(tf.keras.callbacks.Callback):
+        def __init__(self, patience=3):
+            super().__init__()
+            self.patience = patience
+            self.best_weights = None
+            self.best_epoch = 0
+            self.best_loss = np.inf
+            self.wait = 0
+            self.stopped_epoch = 0
+            self.losses = []
+            self.val_losses = []
+            self.monitoring = []
+        #  Monitors validation loss at the end of each epoch and stops training if no improvement is seen for a set patience period
+        def on_epoch_end(self, epoch, logs=None):
+            current_loss = logs.get('val_loss')
+            self.losses.append(logs.get('loss'))
+            self.val_losses.append(current_loss)
 
+            if current_loss < self.best_loss:
+                self.best_loss = current_loss
+                self.wait = 0
+                self.best_epoch = epoch
+                self.best_weights = self.model.get_weights()
+                self.monitoring.append('✓ New best model!')
+            else:
+                self.wait += 1
+                if self.wait >= self.patience:
+                    self.stopped_epoch = epoch
+                    self.monitoring.append(f'⛔ Stopping! No improvement for {self.patience} epochs')
+                    self.model.stop_training = True
+                else:
+                    self.monitoring.append(f'⚠️ No improvement: patience {self.wait}/{self.patience}')
+                    
+        # Plots training and validation loss over epochs, marking the best model and early stopping point
+        def plot_training(self):
+            plt.figure(figsize=(12, 6))
+            epochs = range(1, len(self.losses) + 1)
+
+            # Plot losses
+            plt.plot(epochs, self.losses, 'b-', label='Training Loss')
+            plt.plot(epochs, self.val_losses, 'r-', label='Validation Loss')
+
+            # Mark the best epoch
+            plt.axvline(x=self.best_epoch + 1, color='g', linestyle='--',
+                        label=f'Best Model (Epoch {self.best_epoch + 1})')
+
+            # Highlight stopping point
+            if self.stopped_epoch:
+                plt.axvline(x=self.stopped_epoch + 1, color='r', linestyle='--',
+                            label=f'Early Stopping (Epoch {self.stopped_epoch + 1})')
+
+            plt.title('Training Progress with Early Stopping')
+            plt.xlabel('Epoch')
+            plt.ylabel('Loss')
+            plt.legend()
+            plt.grid(True)
+
+            # Print monitoring log
+            print("\nTraining Monitor Log:")
+            for epoch, message in enumerate(self.monitoring, 1):
+                print(f"Epoch {epoch}: {message}")
+
+    # Defining process for early stopping (monitoring and stopping)
+    monitor = EarlyStoppingMonitor(patience=3)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
+
+    # Train the neural network model with training data and monitor its performance
     history = model.fit(
-        X_train, y_train,
-        validation_data=(X_test, y_test),
-        epochs=10,
-        batch_size=32,
-        verbose=1
+        X_train, y_train,  # Training data (features and target)
+        validation_data=(X_test, y_test),  # Validation data to monitor generalization performance
+        callbacks=[monitor, early_stopping],  # Custom callbacks for tracking progress and stopping early if needed
+        epochs=50,  # Maximum number of training iterations
+        batch_size=32,  # Number of samples processed before updating model weights
+        verbose=1  # Display training progress
     )
+    
+    # Plot the training and validation loss over epochs to visualize model performance
+    monitor.plot_training()  # Generate the loss vs. epoch plot with early stopping markers
+    plt.show()  # Display the plot
 
     # Evaluate
     train_loss = model.evaluate(X_train, y_train, verbose=0)
@@ -95,15 +169,6 @@ def train_model(data_file):
         f.write("\n".join(final_columns))
     print("Column list saved to columns.txt")
 
-    # Plot loss vs. epoch graph
-    plt.figure(figsize=(8, 5))
-    plt.plot(history.history['loss'], label='Training Loss')
-    plt.plot(history.history['val_loss'], label='Validation Loss')
-    plt.title('Loss vs. Epoch')
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss (MSE)')
-    plt.legend()
-    plt.show()
     
 
 
