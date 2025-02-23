@@ -394,6 +394,9 @@ Model Optimization: Hyperparameter tuning for improved performance across all mo
 Deployment: Packaging models for real-time use within an organization’s HR analytics pipeline.
 
 ## Acknowledgments
+- https://www.forbes.com/sites/barnabylashbrooke/2023/07/13/job-satisfaction-is-key-to-workplace-productivity-but-how-do-you-get-it/
+- https://www.indeed.com/career-advice/career-development/positive-working-environment
+
 Thank any external contributors, references, or resources that were helpful for the project.
 
 
