@@ -193,7 +193,28 @@ We used scikit-learn’s StandardScaler for our numeric columns (e.g., DistanceF
    - Data Standardization: Aligning feature distributions helps maintain stable gradients and faster convergence when training neural networks.
 
 Overall, this pipeline—data cleaning, encoding, scaling, model definition, training, and evaluation—is a well-rounded approach to building a predictive neural network for continuous outcomes like *JobSatisfaction*. It balances simplicity and low computational cost (because of the single hidden layer) with enough flexibility to model non-linearities in the data.
-   
+
+## Neural Network Architecture & Activation Function ##
+Activation Function: ReLU (Rectified Linear Unit)
+The ReLU activation function is used in the hidden layer of this neural network. It is defined as:
+
+𝑓(𝑥)=max(0,𝑥) <br/>
+This means that for any negative input, the output is zero, and for positive inputs, the output is the same as the input. ReLU is commonly used because:
+
+It introduces non-linearity, allowing the network to learn complex patterns.
+It helps mitigate the vanishing gradient problem, making training faster and more effective.
+Neural Network Layers
+This model consists of two layers:
+### Hidden Layer ###
+8 neurons
+ReLU activation function
+Takes in an input with the same number of features as the dataset after encoding.
+### Output Layer ###
+1 neuron
+Linear activation function (no activation, just raw output)
+Used for regression tasks where the model predicts a continuous value (e.g., job satisfaction score).
+
+
 
 
 # Job Satisfaction Prediction Model Results Analysis
