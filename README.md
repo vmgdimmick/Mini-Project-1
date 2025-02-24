@@ -12,7 +12,44 @@ This project explores the factors influencing employee productivity and satisfac
 
 By combining these approaches, we aim to answer our question: How do certain factors influence employee satisfaction and productivity?
 
-## Productivity Research: Satisfaction & Characteristics
+# Assumptions and Questions  
+
+## **Assumptions**  
+(Based on attrition and employee satisfaction data)  
+
+- People who take fewer vacations tend to perform better at work.  
+- Alternatively, fewer vacations may lead to increased stress.  
+- A healthy work environment is beneficial to employee productivity.  
+- Stress levels can affect work performance.  
+- Long commutes and heavy traffic negatively impact employee well-being and productivity.  
+- Fewer employee benefits lead to decreased productivity.  
+- All projects are assumed to be of the same difficulty level.  
+- Everyone is assumed to have the same baseline happiness.  
+
+## **Questions**  
+
+### **General Employee Productivity Factors**  
+- How does happiness contribute to employee productivity?  
+- How does education level impact work performance?  
+- How does time spent at the company affect productivity?  
+- How does overall satisfaction influence work efficiency?  
+
+### **Neural Network Analysis**  
+- How many projects does an employee complete in a year?  
+- How do vacation days affect productivity?  
+- How does age correlate with performance?  
+- How does tenure at the company impact output?  
+
+### **Clustering Model Analysis**  
+- How does work productivity vary based on education level?  
+
+### **Decision Tree Analysis**  
+- Can we predict if an employee is going to leave the company?  
+  - Within one year?  
+  - Within three years?  
+
+
+# Productivity Research: Satisfaction & Characteristics
 - Satisfaction:
    - Productive work environments foster productivity, improve moral, promotes collaboration, and fosters growth  
    - Happy and engaged employees are often more productive
@@ -660,12 +697,40 @@ The Elbow Method is a technique used in K-Means clustering to determine the opti
 ![image](https://github.com/user-attachments/assets/63e85af3-f1ed-4f06-9ad5-9123a961a477)
 
 # Contributions
-List the team members and their contributions:
-- **Cailey Crandall** - [Role and contributions]
-- **Vance Dimmick** - [Role and contributions]
-- **Sheridan Traish** - [Role and contributions]
-- **Renee Vannice** - [Role and contributions]
 
+### **Cailey Crandall**  
+- Designed and programmed the neural network
+- Authored README sections:  
+  - **Data Source**  
+  - **Installation and Setup**  
+  - **Neural Network Overview**  
+  - **Data Processing of Neural Network**  
+  - **Creation Process of Neural Network**  
+  - **Explaining the Math**  
+  - **Results Analysis**  
+  - **Future Work**
+- Formatted the README
+
+### **Vance Dimmick**  
+- Designed and programmed the clustering model  
+- Designed and programmed the decision tree  
+- Authored README sections:  
+  - **Decision Tree Overview**  
+  - **Clustering Model Overview**  
+  - **Data Processing for Decision Tree**  
+  - **Creation Process for Decision Tree**  
+  - **Creation Process of Cluster Model**  
+
+ ### Sheridan Traish
+- Authored README sections:  
+  - **Assumptions and Questions**  
+### Renee Vannice 
+- Authored README sections:  
+  - **Introduction**  
+  - **Data Source**  
+  - **Prior Research**  
+  - **Acknowledgements**
+ 
 # Future Work
 - Feature Engineering: Investigate additional features (e.g., demographic data, employee engagement survey results) to enhance model accuracy.
 - Model Optimization: Hyperparameter tuning for improved performance across all models.
