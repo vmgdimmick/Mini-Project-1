@@ -41,13 +41,12 @@ By combining these approaches, we aim to answer our question: How do certain fac
 - How does tenure at the company impact output?  
 
 ### **Clustering Model Analysis**  
-- How does work productivity vary based on education level?  
+- How does work productivity vary based on salary?  
+- How does work productivity vary based on satisfaction?
+- How does work productivity vary based on years spent at a company?  
 
 ### **Decision Tree Analysis**  
-- Can we predict if an employee is going to leave the company?  
-  - Within one year?  
-  - Within three years?  
-
+- Can we predict if an employee is going to be a top performer?
 
 # Productivity Research: Satisfaction & Characteristics
 - Satisfaction:
