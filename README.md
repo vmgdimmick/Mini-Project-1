@@ -350,6 +350,30 @@ A Decision Tree works by recursively splitting the dataset based on feature valu
 
 For evaluation, the Root Mean Squared Error (RMSE) measures the difference between predicted and actual values, while the confusion matrix provides insight into model accuracy, precision, recall, and F1-score in classification settings.  
 
+### Confusion Matrix Explanation  
+
+A confusion matrix is a performance evaluation tool for classification models, including decision trees. It summarizes the model’s predictions by comparing actual versus predicted values.  
+
+For a binary classification problem (e.g., predicting whether an employee completes more than 75% of projects), the confusion matrix consists of four values:  
+
+|                | **Predicted 0** | **Predicted 1** |  
+|--------------|----------------|----------------|  
+| **Actual 0**  | True Negatives (TN) | False Positives (FP) |  
+| **Actual 1**  | False Negatives (FN) | True Positives (TP) |  
+
+<scr>Definitions:<scr/>
+- **Accuracy** = (TP + TN)/(TP + TN + FP + FN)) 
+  - Measures overall correctness of the model.  
+- **Precision** = (TP)/(TP + FP) 
+  - Measures how many of the predicted positive cases were actually positive.  
+- **Recall (Sensitivity)** = (TP)/(TP + FN)  
+  - Measures how many actual positive cases were correctly predicted.  
+- **F1 Score** = 2 * (Precision * Recall) / (Precision + Recall)  
+  - Harmonic mean of precision and recall, balancing both metrics.  
+
+The heatmap visualization provides a representation of these values, where darker colors indicate higher frequencies.  
+
+
 ## Clustering Method Explanation
 
 K-Means Clustering is an unsupervised learning algorithm that groups data points into K clusters based on similarity. It works by:  
