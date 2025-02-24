@@ -1,7 +1,7 @@
-# Mini-Project-1
+# Mini-Project-1 Employee Satisfaction 
 
 
-# Employee Satisfaction
+
 
 ## Introduction
 We wanted to look into employee productivity and the various factors encompassed. 
@@ -10,9 +10,9 @@ This project explores the factors influencing employee productivity and satisfac
 - Neural Network to predict job satisfaction
 - Clustering model for grouping work projects
 
-By combining these approaches, we aim to gain insight into what drives employee engagement and where organizations can make improvements.
+By combining these approaches, we aim to answer our question: How do certain factors influence employee satisfaction and productivity?
 
-# Productivity Research: Satisfaction & Characteristics
+## Productivity Research: Satisfaction & Characteristics
 - Satisfaction:
    - Productive work environments foster productivity, improve moral, promotes collaboration, and fosters growth  
    - Happy and engaged employees are often more productive
@@ -34,27 +34,8 @@ By combining these approaches, we aim to gain insight into what drives employee 
    - Positive Thinking
    - Good Work-Life Balance 
 
-### Overview of Neural Network Model ###
-This neural network model predicts employee job satisfaction based on key factors including business travel frequency, distance from home, years at company, and age.
 
-
-Type: Feed-forward neural network with single hidden layer
-Input Features:
-
-BusinessTravel (categorical)
-DistanceFromHome (numerical)
-YearsAtCompany (numerical)
-Age (numerical)
-
-Activation Functions:
-
-Hidden Layer: ReLU
-Output Layer: Linear
-
-Loss Function: Mean Squared Error (MSE)
-Optimizer: Adam
-
-## Data Source
+# Data Source
 Our data is derived from two separate Kaggle datasets, cleaned and merged into a single comprehensive dataset for the clustering model. The rows for both datasets are employee number. The columns of both data sets are listed below.
 
 ### Attrition Rate of a Company:
@@ -103,7 +84,7 @@ Our data is derived from two separate Kaggle datasets, cleaned and merged into a
   
 Side Note:
 In the Neural Network code folder, you will find a file named extrater.csv (yes, I know the spelling is incorrect). This file is used by a program I created to extract specific columns of interest, making the data easier to work with. There is also a file called filtered_data.csv, which is the output of the data extraction program. I included this file because it may be helpful for anyone looking to narrow down the data to focus on specific variables.
-## Installation and Setup
+# Installation and Setup
 Instructions for setting up the project environment and running the neural network:
 1. Clone this repository:
    ```bash
@@ -166,7 +147,29 @@ Instructions for setting up the project environment and running the decision tre
 4. Run the script:
    ```bash
    jupyter notebook project_tree.ipynb
-## Data Processing
+
+# Neural Network Model
+This neural network model predicts employee job satisfaction based on key factors including business travel frequency, distance from home, years at company, and age.
+
+
+Type: Feed-forward neural network with single hidden layer
+Input Features:
+
+BusinessTravel (categorical)
+DistanceFromHome (numerical)
+YearsAtCompany (numerical)
+Age (numerical)
+
+Activation Functions:
+
+Hidden Layer: ReLU
+Output Layer: Linear
+
+Loss Function: Mean Squared Error (MSE)
+Optimizer: Adam
+# Data Processing
+
+## Neural Network
 For the neural network, before analysis, data cleaning steps included:
 
 1. Handling missing values:
@@ -178,6 +181,8 @@ We used one-hot encoding via pd.get_dummies for columns like "BusinessTravel". T
 5. Normalizing or standardizing numerical features for modeling consistency.
 We used scikit-learn’s StandardScaler for our numeric columns (e.g., DistanceFromHome, Age, YearsAtCompany). Standardization rescales each feature so it has a mean of 0 and standard deviation of 1, helping the neural network train more efficiently.
 
+
+# Creation Process
 **Summary of the Neural Network Creation Process**
 
 1. **Data Collection & Filtering**  
@@ -220,6 +225,7 @@ We used scikit-learn’s StandardScaler for our numeric columns (e.g., DistanceF
 
 Overall, this pipeline—data cleaning, encoding, scaling, model definition, training, and evaluation—is a well-rounded approach to building a predictive neural network for continuous outcomes like *JobSatisfaction*. It balances simplicity and low computational cost (because of the single hidden layer) with enough flexibility to model non-linearities in the data.
 
+# Explaining the math
 ## Neural Network Architecture & Activation Function ##
 Activation Function: ReLU (Rectified Linear Unit)
 The ReLU activation function is used in the hidden layer of this neural network. It is defined as:
@@ -243,12 +249,11 @@ Used for regression tasks where the model predicts a continuous value (e.g., job
 
 
 
-# Job Satisfaction Prediction Model Results Analysis
+# Results Analysis
 
-## Overview
+## Neural Network Results
 This document analyzes predictions from our neural network model that predicts employee job satisfaction based on business travel frequency, distance from home, years at company, and age. The model predicts satisfaction on a scale that appears to range from approximately 2.5 to 7.6.
 
-## Key Findings
 
 ### Highest Satisfaction Cases
 1. **Test Case 5** (Satisfaction: 7.56)
@@ -276,7 +281,7 @@ This document analyzes predictions from our neural network model that predicts e
    - Short distance (5 miles)
    - Rare travel
 
-## Pattern Analysis
+### Pattern Analysis:
 
 ### Age and Tenure Impact
 - **Strong Positive Correlation**: Higher age and longer tenure strongly correlate with higher satisfaction
@@ -293,7 +298,7 @@ This document analyzes predictions from our neural network model that predicts e
 - Frequent travelers show highest variability in satisfaction (2.51-7.56)
 - Rare travelers show more consistent, moderate satisfaction levels (2.65-4.42)
 
-## Notable Relationships
+### Notable Relationships:
 
 ### Age-Distance Interaction
 - Older employees with longer commutes show surprisingly high satisfaction
@@ -303,23 +308,23 @@ This document analyzes predictions from our neural network model that predicts e
 - Frequent travel combined with long tenure predicts higher satisfaction
 - May indicate career success and advancement opportunities
 
-## Model Behavior Insights
+### Model Behavior Insights
 1. **Range**: Predictions span from 2.51 to 7.56, showing significant variation
 2. **Clustering**: Several predictions cluster around 2.6-2.8 for younger employees
 3. **Outliers**: Notably high predictions for senior employees with long distances
 
-## Recommendations for Further Investigation
+### Inspirations for Further Investigation
 1. Validate the high satisfaction predictions for long-distance senior employees
 2. Investigate why younger employees consistently show lower satisfaction
 3. Explore additional features that might explain satisfaction variations
 4. Consider potential biases in the training data regarding age and tenure
 
-## Technical Notes
+### Technical Notes
 - The model shows consistent patterns in prediction behavior
 - TensorFlow warnings indicate potential optimization opportunities in the prediction pipeline
 - Results suggest strong feature interactions affecting predictions
 
-## Usage Example
+### Usage Example
 ```python
 test_case = {
     'BusinessTravel': 'Travel_Frequently',
@@ -331,7 +336,10 @@ test_case = {
 ```
 
 ---
-# Model Accuracy
+
+# Accuracy
+
+## Neural Network Evaluation
 
 Here are the results after running the training script of the neural network. The model decided that 39 epochs was sufficient. At the bottom of the text, the MSE for testing and training is listed. We can see that the testing MSE is ~0.4 more than the training MSE. 
 ```
@@ -385,23 +393,23 @@ Column list saved to columns.txt
 ![image](https://github.com/user-attachments/assets/32e0a3da-60d4-419f-88f8-adccf73dcf12)
 
 
-## Contributions
+# Contributions
 List the team members and their contributions:
 - **Cailey Crandall** - [Role and contributions]
 - **Vance Dimmick** - [Role and contributions]
 - **Sheridan Traish** - [Role and contributions]
 - **Renee Vannice** - [Role and contributions]
 
-## Future Work
+# Future Work
 - Feature Engineering: Investigate additional features (e.g., demographic data, employee engagement survey results) to enhance model accuracy.
 - Model Optimization: Hyperparameter tuning for improved performance across all models.
 - Deployment: Packaging models for real-time use within an organization’s HR analytics pipeline.
 
-## Acknowledgments
+# Acknowledgments
 - https://www.forbes.com/sites/barnabylashbrooke/2023/07/13/job-satisfaction-is-key-to-workplace-productivity-but-how-do-you-get-it/
 - https://www.indeed.com/career-advice/career-development/positive-working-environment
 
-Thank any external contributors, references, or resources that were helpful for the project.
+
 
 
 
