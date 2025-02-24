@@ -854,7 +854,7 @@ This model shows strong overall accuracy but may benefit from optimization depen
   - **Creation Process of Neural Network**  
   - **Explaining the Math**  
   - **Results Analysis**
-  - **Accuracy** 
+  - **Model Evaluations** 
   - **Future Work**
 - Formatted the README
 
