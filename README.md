@@ -466,6 +466,63 @@ This visualization shows k-means clustering analysis of exit rates (employee tur
 - Number of Clusters: 4
 - Axes: X-axis shows Projects Completed (0-25), Y-axis shows Exit Rate (0-40%)
 - Centroids marked with red X markers indicating cluster centers
+
+## Decision Tree Results
+![image](https://github.com/user-attachments/assets/6da0c2d7-0331-4884-9392-54fee09c9ead)
+
+### Overview
+This decision tree visualization represents a model for predicting whether an employee will perform above the 75th percentile, based on various workplace factors. The tree uses multiple variables to classify high performers, with each node showing decision criteria and statistical metrics.
+
+### Key Decision Paths:
+
+### Primary Split
+- Root node based on Salary (threshold: 100757.0)
+- 180 total samples with squared error of 0.146
+- Indicates salary as primary predictor of high performance
+
+### Left Branch (Lower Salary)
+1. Initial split on Productivity (threshold: 97.5%)
+   - 133 samples, squared error 0.05
+   - High performers tend to already show high productivity
+   - Further refined by:
+     - Secondary salary threshold (86759.0)
+     - Satisfaction Rate (11.5%)
+     - Distance From Home (8.5)
+     - Percent Salary Hike (14.5%)
+
+### Right Branch (Higher Salary)
+1. Split on Position (threshold: 4.0)
+   - 47 samples, higher error rate (0.249)
+   - Further refined by:
+     - Environment Satisfaction (2.5)
+     - Total Working Years (19.0)
+     - Satisfaction Rate (97%)
+
+### Key Performance Indicators
+1. Salary (primary determinant)
+2. Current Productivity
+3. Position Level
+4. Environment Satisfaction
+5. Total Working Years
+6. Satisfaction Rate
+7. Distance From Home
+8. Percent Salary Hike
+
+### Model Insights
+1. High salary alone doesn't guarantee top performance
+2. Current productivity is a strong predictor for lower-salaried employees 
+3. Position level becomes more important for higher-salaried employees
+4. Employee satisfaction metrics play significant roles in both branches
+5. Work experience (Total Working Years) matters more for higher-salaried positions
+6. Distance from home can impact performance in lower-salaried positions
+
+### Statistical Notes
+- Model uses squared error as measure of node purity
+- Smaller nodes (1-4 samples) suggest possible overfitting
+- More complex decision paths for lower-salaried employees
+- Higher error rates in the right branch suggest more variability in high-salary performance prediction
+
+This decision tree provides a framework for understanding the factors that contribute to exceptional employee performance, with clear differentiation between salary levels and their associated performance drivers.
 # Accuracy
 
 ## Neural Network Evaluation
