@@ -136,13 +136,16 @@ Instructions for setting up the project environment and running the neural netwo
 3. Install dependencies:
    ```bash
    pip install pandas
-   pip install scikit-learn
-   pip install tensorflow
-   
+   pip install seaborn
+   pip instsallscikit-learn
+   pip install matplotlib
+   pip install plotly
+   pip install kaleido
+   pip install numpy
    ```
 4. Run the script:
    ```bash
-   python train.py # (or whatever script you are running)
+   jupyter notebook project_kmeans_cluster.ipynb
 
 Instructions for setting up the project environment and running the decision tree:
 1. Clone this repository:
@@ -157,12 +160,12 @@ Instructions for setting up the project environment and running the decision tre
    ```bash
    pip install pandas
    pip install scikit-learn
-   pip install tensorflow
+   pip install numpy
+   pip install seaborn
    ```
 4. Run the script:
    ```bash
-   python train.py # (or whatever script you are running)
-
+   jupyter notebook project_tree.ipynb
 ## Data Processing
 For the neural network, before analysis, data cleaning steps included:
 
