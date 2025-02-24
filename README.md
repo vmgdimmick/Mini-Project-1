@@ -167,6 +167,60 @@ Output Layer: Linear
 
 Loss Function: Mean Squared Error (MSE)
 Optimizer: Adam
+
+# Decision Tree  
+
+This decision tree model predicts whether employees will perform above or below the 75th percentile for projects completed based on the following features:
+
+- Productivity (%)** (Integer)  
+- Satisfaction Rate (%)** (Integer)  
+- Department_x** (Categorical)  
+- Position** (Categorical)  
+- Salary** (Integer)  
+- Attrition** (Categorical)  
+- BusinessTravel** (Categorical)  
+- Department_y** (Categorical)  
+- DistanceFromHome** (Integer)  
+- Education** (Integer)  
+- EducationField** (Categorical)  
+- Gender** (Categorical)  
+- JobLevel** (Integer)  
+- JobRole** (Categorical)  
+- *MaritalStatus** (Categorical)  
+- NumCompaniesWorked** (Float)  
+- PercentSalaryHike** (Integer)  
+- StandardHours** (Integer)  
+- TotalWorkingYears** (Float)  
+- YearsAtCompany** (Integer)  
+- YearsSinceLastPromotion** (Integer)  
+- EnvironmentSatisfaction** (Float)  
+- JobSatisfaction** (Float)  
+- WorkLifeBalance** (Float)  
+- JobInvolvement** (Integer)  
+
+## Performance Metrics  
+
+- Root Mean Squared Error (RMSE)**  
+- Confusion Matrix Metrics:**  
+  - Accuracy  
+  - Precision  
+  - Recall  
+  - F1 Score
+
+# K-Means Clustering  
+
+This clustering model analyzes relationships between:  
+
+- Projects completed and salary**  
+- Projects completed and employee satisfaction**  
+- Projects completed and years an employee has worked at the company**  
+
+## Model Details  
+
+- **Type:** K-Means Clustering  
+- **Silhouette Score:** 0 to 1  
+
+
 # Data Processing
 
 ## Neural Network
