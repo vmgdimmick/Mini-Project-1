@@ -393,9 +393,9 @@ List the team members and their contributions:
 - **Renee Vannice** - [Role and contributions]
 
 ## Future Work
-Feature Engineering: Investigate additional features (e.g., demographic data, employee engagement survey results) to enhance model accuracy.
-Model Optimization: Hyperparameter tuning for improved performance across all models.
-Deployment: Packaging models for real-time use within an organization’s HR analytics pipeline.
+- Feature Engineering: Investigate additional features (e.g., demographic data, employee engagement survey results) to enhance model accuracy.
+- Model Optimization: Hyperparameter tuning for improved performance across all models.
+- Deployment: Packaging models for real-time use within an organization’s HR analytics pipeline.
 
 ## Acknowledgments
 - https://www.forbes.com/sites/barnabylashbrooke/2023/07/13/job-satisfaction-is-key-to-workplace-productivity-but-how-do-you-get-it/
