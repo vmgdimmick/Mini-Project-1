@@ -793,7 +793,8 @@ This model shows strong overall accuracy but may benefit from optimization depen
   - **Data Processing of Neural Network**  
   - **Creation Process of Neural Network**  
   - **Explaining the Math**  
-  - **Results Analysis**  
+  - **Results Analysis**
+  - **Accuracy** 
   - **Future Work**
 - Formatted the README
 
