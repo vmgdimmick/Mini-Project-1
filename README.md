@@ -6,9 +6,9 @@
 ## Introduction
 We wanted to look into employee productivity and the various factors encompassed. 
 This project explores the factors influencing employee productivity and satisfaction, with a focus on:
-- Decision Tree model for employee attrition
+- Decision Tree model for predicting whether employee will perform well
 - Neural Network to predict job satisfaction
-- Clustering model for grouping work projects
+- Clustering model for exploring factors that influence number of projects completed
 
 By combining these approaches, we aim to answer our question: How do certain factors influence employee satisfaction and productivity?
 
