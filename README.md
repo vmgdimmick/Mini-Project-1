@@ -497,7 +497,7 @@ This visualization demonstrates k-means clustering analysis of employee data, pl
 ![image](https://github.com/user-attachments/assets/33a67e74-6dfa-4a4b-afbe-25b755e36673)
 
 ### Overview
-This visualization presents a k-means clustering analysis plotting customer satisfaction rates against the number of projects completed. The data is segmented into four distinct clusters, each with its own centroid (marked by red X), revealing different patterns in customer satisfaction levels.
+This visualization presents a k-means clustering analysis plotting employee satisfaction rates against the number of projects completed. The data is segmented into four distinct clusters, each with its own centroid (marked by red X), revealing different patterns in employee satisfaction levels.
 
 ### Cluster Observations:
 
@@ -505,7 +505,7 @@ This visualization presents a k-means clustering analysis plotting customer sati
 - Located in the top portion of the graph
 - Satisfaction range: 75-100%
 - Projects completed: 0-25
-- Characteristics: Represents consistently high customer satisfaction regardless of project count
+- Characteristics: Represents consistently high employee satisfaction regardless of project count
 
 ### Medium-High Satisfaction Cluster (Yellow)
 - Located in the upper-middle section
@@ -527,9 +527,9 @@ This visualization presents a k-means clustering analysis plotting customer sati
 
 ### Key Insights
 1. No clear correlation between number of projects completed and satisfaction rates
-2. Distinct satisfaction bands suggest systematic factors affecting customer experience
+2. Distinct satisfaction bands suggest systematic factors affecting employee experience
 3. Wide spread of satisfaction levels across all project counts
-4. Customer satisfaction appears to be independent of project volume
+4. Employee satisfaction appears to be independent of project volume
 
 ### Technical Details
 - Visualization Type: Scatter plot with k-means clustering
@@ -539,46 +539,54 @@ This visualization presents a k-means clustering analysis plotting customer sati
 
  ![image](https://github.com/user-attachments/assets/4a30641b-247f-46fb-b35e-98c1d55327da)
 
-### Overview
-This visualization shows k-means clustering analysis of exit rates (employee turnover) plotted against the number of projects completed. The data is divided into four distinct clusters, each marked by a red centroid (X), revealing different patterns in employee departure rates.
+# Satisfaction Rate vs Projects Completed: K-Means Clustering Analysis
 
-### Cluster Observations:
+## Overview
+This visualization shows k-means clustering analysis of employee satisfaction rates plotted against the number of projects completed. The data is divided into four distinct clusters, each marked by a red centroid (X), revealing different patterns in employee satisfaction levels.
 
-### High Exit Rate Cluster (Yellow)
+## Cluster Observations
+
+### High Satisfaction Cluster (Yellow)
 - Located in the top portion
-- Exit rate range: 25-40%
+- Satisfaction rate range: 25-40%
 - Projects completed: 0-25
-- Characteristics: Represents concerning high turnover rates across project experience levels
+- Characteristics: Represents highest employee satisfaction spanning all experience levels
 
-### Medium-High Exit Rate Cluster (Blue)
+### Medium-High Satisfaction Cluster (Blue)
 - Located in the upper-middle section
-- Exit rate range: 15-25%
+- Satisfaction rate range: 15-25%
 - Projects completed: 10-25
-- Characteristics: Shows elevated turnover among more experienced employees
+- Characteristics: Shows moderate-high satisfaction among more experienced employees
 
-### Medium-Low Exit Rate Cluster (Green)
+### Medium-Low Satisfaction Cluster (Green)
 - Located in the lower-middle section
-- Exit rate range: 5-12%
+- Satisfaction rate range: 5-12%
 - Projects completed: 12-25
-- Characteristics: Indicates moderate turnover among experienced employees
+- Characteristics: Indicates decreasing satisfaction among highly experienced employees
 
-### Low Exit Rate Cluster (Purple)
+### Low Satisfaction Cluster (Purple)
 - Located in the bottom portion
-- Exit rate range: 0-15%
+- Satisfaction rate range: 0-15%
 - Projects completed: 0-12
-- Characteristics: Represents lower turnover rates among less experienced employees
+- Characteristics: Represents lower satisfaction rates among less experienced employees
 
-### Key Insights
-1. Concerning pattern of higher exit rates among employees with more projects completed
-2. Multiple distinct turnover patterns suggesting different risk factors
-3. Notable cluster of high turnover (25-40%) across all experience levels
-4. Potential retention issues with experienced employees
+## Key Insights
+1. No clear positive correlation between project experience and satisfaction
+2. Potential satisfaction issues with highly experienced employees (15+ projects)
+3. Wide spread of satisfaction levels among newer employees (0-10 projects)
+4. Notable cluster of consistently high satisfaction (25-40%) across all experience levels
 
-### Technical Details
+## Technical Details
 - Visualization Type: Scatter plot with k-means clustering
 - Number of Clusters: 4
-- Axes: X-axis shows Projects Completed (0-25), Y-axis shows Exit Rate (0-40%)
+- Axes: X-axis shows Projects Completed (0-25), Y-axis shows Satisfaction Rate (0-40%)
 - Centroids marked with red X markers indicating cluster centers
+
+## Recommendations
+1. Investigate factors contributing to low satisfaction in experienced employees
+2. Study practices of consistently high-performing teams/departments
+3. Develop targeted engagement strategies for different employee segments
+4. Consider workload optimization for employees with high project counts
 
 ## Decision Tree Results
 ![image](https://github.com/user-attachments/assets/6da0c2d7-0331-4884-9392-54fee09c9ead)
