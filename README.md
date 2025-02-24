@@ -525,6 +525,7 @@ test_case = {
 
 ![image](https://github.com/user-attachments/assets/cde952e3-a7b8-484c-bfa5-cea11b8ab1fd)
 
+
 ### Overview
 This visualization demonstrates k-means clustering analysis of employee data, plotting salary against the number of projects completed. The analysis reveals four distinct clusters, each marked by a red centroid (X), suggesting natural groupings in the workforce.
 
@@ -716,7 +717,7 @@ This decision tree visualization represents a model for predicting whether an em
 - Higher error rates in the right branch suggest more variability in high-salary performance prediction
 
 This decision tree provides a framework for understanding the factors that contribute to exceptional employee performance, with clear differentiation between salary levels and their associated performance drivers.
-# Accuracy
+# Model Evaluations
 
 ## Neural Network Evaluation
 
@@ -775,6 +776,17 @@ Column list saved to columns.txt
 The Elbow Method is a technique used in K-Means clustering to determine the optimal number of clusters by plotting the Sum of Squared Errors (SSE) for different values of 
 𝑘 and identifying the point where the decrease in SSE slows down, forming an "elbow." Here, we can see that 4 clusters was best. 
 ![image](https://github.com/user-attachments/assets/63e85af3-f1ed-4f06-9ad5-9123a961a477)
+
+Here are the silhouette scores for the graphs in the order in which they appear in the results section. The higher the value, the more clustered the graphs are.
+```
+Silhouette Score: 0.5878064086134991
+```
+```
+Silhouette Score: -0.05405965558639975
+```
+```
+Silhouette Score: 0.025078394835782555
+```
 
 ## Decision Tree Evaluation
 
