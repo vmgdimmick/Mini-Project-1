@@ -252,7 +252,7 @@ Used for regression tasks where the model predicts a continuous value (e.g., job
 # Results Analysis
 
 ## Neural Network Results
-This document analyzes predictions from our neural network model that predicts employee job satisfaction based on business travel frequency, distance from home, years at company, and age. The model predicts satisfaction on a scale that appears to range from approximately 2.5 to 7.6.
+We analyzed predictions from our neural network model that predicts employee job satisfaction based on business travel frequency, distance from home, years at company, and age. The model predicts satisfaction on a scale that appears to range from approximately 2.5 to 7.6.
 
 
 ### Highest Satisfaction Cases
@@ -336,7 +336,136 @@ test_case = {
 ```
 
 ---
+## Cluster Graph Results
 
+![image](https://github.com/user-attachments/assets/cde952e3-a7b8-484c-bfa5-cea11b8ab1fd)
+
+### Overview
+This visualization demonstrates k-means clustering analysis of employee data, plotting salary against the number of projects completed. The analysis reveals four distinct clusters, each marked by a red centroid (X), suggesting natural groupings in the workforce.
+
+### Cluster Observations
+
+### Entry-Level Cluster (Blue)
+- Located in the bottom-left quadrant
+- Salary range: ~30,000-50,000
+- Projects completed: 0-7
+- Characteristics: Likely represents entry-level or junior positions with limited project experience
+
+### Mid-Level Cluster (Green)
+- Located in the lower-middle section
+- Salary range: ~55,000-75,000
+- Projects completed: 5-15
+- Characteristics: Represents mid-level employees with growing project experience
+
+### Senior-Level Cluster (Purple)
+- Located in the middle-upper section
+- Salary range: ~75,000-95,000
+- Projects completed: 8-20
+- Characteristics: Indicates senior positions with substantial project experience
+
+### Expert-Level Cluster (Yellow)
+- Located in the top-right quadrant
+- Salary range: ~95,000-120,000
+- Projects completed: 15-25
+- Characteristics: Represents expert-level positions with extensive project experience
+
+### Key Insights
+1. Clear positive correlation between projects completed and salary
+2. Distinct salary bands with minimal overlap between clusters
+3. Project experience appears to be a strong indicator of salary level
+4. Natural progression paths visible through the cluster arrangement
+
+### Technical Details
+- Visualization Type: Scatter plot with k-means clustering
+- Number of Clusters: 4
+- Axes: X-axis shows Projects Completed (0-25), Y-axis shows Salary (30,000-120,000)
+- Centroids marked with red X markers indicating cluster centers
+
+![image](https://github.com/user-attachments/assets/33a67e74-6dfa-4a4b-afbe-25b755e36673)
+
+### Overview
+This visualization presents a k-means clustering analysis plotting customer satisfaction rates against the number of projects completed. The data is segmented into four distinct clusters, each with its own centroid (marked by red X), revealing different patterns in customer satisfaction levels.
+
+### Cluster Observations:
+
+### High Satisfaction Cluster (Blue)
+- Located in the top portion of the graph
+- Satisfaction range: 75-100%
+- Projects completed: 0-25
+- Characteristics: Represents consistently high customer satisfaction regardless of project count
+
+### Medium-High Satisfaction Cluster (Yellow)
+- Located in the upper-middle section
+- Satisfaction range: 45-70%
+- Projects completed: 0-25
+- Characteristics: Shows moderately high satisfaction levels across various project counts
+
+### Medium-Low Satisfaction Cluster (Green)
+- Located in the lower-middle section
+- Satisfaction range: 25-45%
+- Projects completed: 0-25
+- Characteristics: Indicates below-average satisfaction levels
+
+### Low Satisfaction Cluster (Purple)
+- Located in the bottom portion
+- Satisfaction range: 0-25%
+- Projects completed: 0-25
+- Characteristics: Represents consistently low satisfaction rates
+
+### Key Insights
+1. No clear correlation between number of projects completed and satisfaction rates
+2. Distinct satisfaction bands suggest systematic factors affecting customer experience
+3. Wide spread of satisfaction levels across all project counts
+4. Customer satisfaction appears to be independent of project volume
+
+### Technical Details
+- Visualization Type: Scatter plot with k-means clustering
+- Number of Clusters: 4
+- Axes: X-axis shows Projects Completed (0-25), Y-axis shows Satisfaction Rate (0-100%)
+- Centroids marked with red X markers indicating cluster centers
+
+ ![image](https://github.com/user-attachments/assets/4a30641b-247f-46fb-b35e-98c1d55327da)
+
+### Overview
+This visualization shows k-means clustering analysis of exit rates (employee turnover) plotted against the number of projects completed. The data is divided into four distinct clusters, each marked by a red centroid (X), revealing different patterns in employee departure rates.
+
+### Cluster Observations:
+
+### High Exit Rate Cluster (Yellow)
+- Located in the top portion
+- Exit rate range: 25-40%
+- Projects completed: 0-25
+- Characteristics: Represents concerning high turnover rates across project experience levels
+
+### Medium-High Exit Rate Cluster (Blue)
+- Located in the upper-middle section
+- Exit rate range: 15-25%
+- Projects completed: 10-25
+- Characteristics: Shows elevated turnover among more experienced employees
+
+### Medium-Low Exit Rate Cluster (Green)
+- Located in the lower-middle section
+- Exit rate range: 5-12%
+- Projects completed: 12-25
+- Characteristics: Indicates moderate turnover among experienced employees
+
+### Low Exit Rate Cluster (Purple)
+- Located in the bottom portion
+- Exit rate range: 0-15%
+- Projects completed: 0-12
+- Characteristics: Represents lower turnover rates among less experienced employees
+
+### Key Insights
+1. Concerning pattern of higher exit rates among employees with more projects completed
+2. Multiple distinct turnover patterns suggesting different risk factors
+3. Notable cluster of high turnover (25-40%) across all experience levels
+4. Potential retention issues with experienced employees
+
+### Technical Details
+- Visualization Type: Scatter plot with k-means clustering
+- Number of Clusters: 4
+- Axes: X-axis shows Projects Completed (0-25), Y-axis shows Exit Rate (0-40%)
+- Centroids marked with red X markers indicating cluster centers
 # Accuracy
 
 ## Neural Network Evaluation
@@ -392,6 +521,10 @@ Column list saved to columns.txt
 ### Loss vs. Epoch Graph of Neural Network ### 
 ![image](https://github.com/user-attachments/assets/32e0a3da-60d4-419f-88f8-adccf73dcf12)
 
+## Cluster Graph Evaluation:
+The Elbow Method is a technique used in K-Means clustering to determine the optimal number of clusters by plotting the Sum of Squared Errors (SSE) for different values of 
+𝑘 and identifying the point where the decrease in SSE slows down, forming an "elbow." Here, we can see that 4 clusters was best. 
+![image](https://github.com/user-attachments/assets/63e85af3-f1ed-4f06-9ad5-9123a961a477)
 
 # Contributions
 List the team members and their contributions:
