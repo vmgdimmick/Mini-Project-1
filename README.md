@@ -300,7 +300,22 @@ Takes in an input with the same number of features as the dataset after encoding
 Linear activation function (no activation, just raw output)
 Used for regression tasks where the model predicts a continuous value (e.g., job satisfaction score).
 
+## Decision Tree Explanation
 
+A Decision Tree works by recursively splitting the dataset based on feature values that maximize information gain or minimize impurity. At each step, the algorithm selects the feature that best separates the data into distinct groups. The final tree consists of decision nodes and leaf nodes, where each path from root to leaf represents a decision rule.
+
+For evaluation, the Root Mean Squared Error (RMSE) measures the difference between predicted and actual values, while the confusion matrix provides insight into model accuracy, precision, recall, and F1-score in classification settings.  
+
+## Clustering Method Explanation
+
+K-Means Clustering is an unsupervised learning algorithm that groups data points into K clusters based on similarity. It works by:  
+
+1. Initializing K centroids (randomly selecting K data points as initial cluster centers).  
+2. Assigning each point to the nearest centroid based on Euclidean distance.  
+3. Updating centroids** by calculating the mean position of all points in each cluster.  
+4. Repeating steps 2 and 3** until centroids stabilize (i.e., do not change significantly).  
+
+To evaluate clustering quality, the Silhouette Score** measures how well each point fits within its assigned cluster (ranging from 0 to 1, where a higher value indicates better-defined clusters).  
 
 
 # Results Analysis
