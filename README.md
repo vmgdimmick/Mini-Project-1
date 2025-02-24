@@ -281,7 +281,7 @@ Before analysis, data cleaning steps included:
 - Binary Target Creation – A new binary column was added to indicate whether employees completed more or less than the 75th percentile (17) projects.  
 
 # Creation Process
-**Summary of the Neural Network Creation Process**
+## Summary of the Neural Network Creation Process ##
 
 1. **Data Collection & Filtering**  
    - We began with a CSV containing employee-related variables (e.g., *BusinessTravel, DistanceFromHome, YearsAtCompany, Age, JobSatisfaction*).  
@@ -322,6 +322,54 @@ Before analysis, data cleaning steps included:
    - Data Standardization: Aligning feature distributions helps maintain stable gradients and faster convergence when training neural networks.
 
 Overall, this pipeline—data cleaning, encoding, scaling, model definition, training, and evaluation—is a well-rounded approach to building a predictive neural network for continuous outcomes like *JobSatisfaction*. It balances simplicity and low computational cost (because of the single hidden layer) with enough flexibility to model non-linearities in the data.
+## Summary of Decision Tree Creation Process  
+
+## Creation Process  
+1.**Data Collection & Filtering**  
+We began with a CSV containing employee-related variables, such as:  
+ BusinessTravel  
+ DistanceFromHome  
+ YearsAtCompany  
+ Age  
+ JobSatisfaction  
+
+2. **Encoding Categorical Variables**  
+To handle categorical variables, **LabelEncoder** from the `sklearn.preprocessing` package was used. This function assigned numerical labels to categorical columns, allowing the decision tree to process them as variables.  
+
+3. **Choice of Modeling Approach***  
+
+3.1 Problem Type: 
+We predicted a binary variable, Output, indicating whether an employee will perform in the 75th percentile of project completion.  
+Since this is a classification task, a decision tree model was selected over clustering or regression.  
+
+3.2 Decision Tree Structure  
+A simple decision tree diagram was built, utilizing an unsupervised learning approach.  
+The model made predictions on whether an employee would perform in the 75th percentile based on selected independent variables.  
+
+3.3 Justification  
+A decision tree is well-suited for predicting a binary target variable when dealing with a mix of categorical and numerical features.  
+The model learns from previous observations and applies that knowledge to new instances, making it a useful tool for understanding patterns in employee performance.  
+
+4. **Training and Evaluation**  
+
+4.1 Evaluation Metrics  
+Loss Function – Root Mean Squared Error (RMSE) was included for reference but was not the primary metric.  
+Confusion Matrix Metrics:  
+   - **Accuracy** =  (0.8)– proportion of all correct predictions.  
+   - **Precision** = (0.75) – model’s ability to avoid false positives.  
+   - **Recall** = (0.5) – model’s ability to correctly identify positive instances.  
+   - **F1 Score** = (0.6) – balances the tradeoff between precision and recall.  
+
+4.2 Train/Test Split  
+The dataset was split into training and test sets.  
+**90% training data (180 observations)** was used to train the model.  
+**10% test data (20 observations)** was used to evaluate performance.  
+
+4.3 Key Takeaways  
+The most critical metric for this task is Recall, as it measures the model's ability to correctly identify employees who will perform in the 75th percentile.  
+However, our model's Recall score is relatively low, suggesting that it still struggles to correctly classify high-performing employees.  
+This indicates that further refinements are needed to improve predictive accuracy.  
+
 
 # Explaining the math
 ## Neural Network Architecture & Activation Function ##
