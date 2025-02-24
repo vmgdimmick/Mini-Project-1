@@ -235,6 +235,13 @@ We used one-hot encoding via pd.get_dummies for columns like "BusinessTravel". T
 5. Normalizing or standardizing numerical features for modeling consistency.
 We used scikit-learn’s StandardScaler for our numeric columns (e.g., DistanceFromHome, Age, YearsAtCompany). Standardization rescales each feature so it has a mean of 0 and standard deviation of 1, helping the neural network train more efficiently.
 
+## Decision Tree  
+
+Before analysis, data cleaning steps included:  
+
+- Random Sampling – A dataset was shortened via random sampling to achieve row congruence between datasets.  
+- Dataset Merging – The 200-row sampled dataset was merged with another 200-row dataset on an artificially created mutual column, with duplicate columns removed.  
+- Binary Target Creation – A new binary column was added to indicate whether employees completed more or less than the 75th percentile (17) projects.  
 
 # Creation Process
 **Summary of the Neural Network Creation Process**
